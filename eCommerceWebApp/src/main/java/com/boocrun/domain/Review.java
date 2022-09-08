@@ -13,7 +13,7 @@ public class Review {
 	private String text;
 	private Integer rating;
 	private Date date;
-	private User uaser;
+	private User user;
 	private Product product;
 	
 	
@@ -54,12 +54,12 @@ public class Review {
 	}
 	
 	@ManyToOne
-	public User getUaser() {
-		return uaser;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUaser(User uaser) {
-		this.uaser = uaser;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	@ManyToOne

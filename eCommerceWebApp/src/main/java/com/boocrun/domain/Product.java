@@ -2,11 +2,8 @@ package com.boocrun.domain;
 
 import java.util.HashSet;
 import java.util.Set;
-
 import javax.persistence.CascadeType;
-
-//import java.math.BigDecimal;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -34,7 +31,7 @@ public class Product {
 		this.user = user;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "product" )
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="product" )
 	public Set<Review> getReviews() {
 		return reviews;
 	}
@@ -77,7 +74,7 @@ public class Product {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
-
+	@Column(length=2000)
 	public String getDescription() {
 		return description;
 	}

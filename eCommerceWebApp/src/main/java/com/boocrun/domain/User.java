@@ -55,7 +55,7 @@ public class User {
 		this.id = id;
 	}
 
-	@OneToMany(cascade=CascadeType.ALL, mappedBy = "user")
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="user")
 	public Set<Product> getProducts() {
 		return products;
 	}
@@ -64,7 +64,7 @@ public class User {
 		this.products = products;
 	}
 
-	@OneToMany(cascade=CascadeType.ALL, mappedBy = "user")
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="user")
 	public Set<Review> getReviews() {
 		return reviews;
 	}
