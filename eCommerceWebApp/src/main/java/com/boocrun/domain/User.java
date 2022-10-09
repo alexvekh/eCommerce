@@ -10,24 +10,21 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.boocrun.security.Authority;
+
 @Entity
 public class User {
 	private Long id;
-	private String role;
+
 	private String password;
 	private String email;
 	private Set<Product> products = new HashSet<>();
 	private Set<Review> reviews = new HashSet<> ();
 	private Cart cart;
-	
+	// One to many relationship between user and its Authorities
+	private Set<Authority> authorities = new HashSet<>();
 
-	public String getRole() {
-		return role;
-	}
 
-	public void setRole(String role) {
-		this.role = role;
-	}
 
 	public String getPassword() {
 		return password;
@@ -80,5 +77,14 @@ public class User {
 
 	public void setCart(Cart cart) {
 		this.cart = cart;
+	}
+	
+	@OneToMany
+	public Set<Authority> getAuthorities() {
+		return authorities;
+	}
+
+	public void setAuthorities(Set<Authority> authorities) {
+		this.authorities = authorities;
 	}
 }
