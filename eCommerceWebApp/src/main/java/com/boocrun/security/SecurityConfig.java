@@ -26,7 +26,7 @@ public class SecurityConfig {
 			.and()
 		.formLogin()
 			.loginPage("/login")
-			.defaultSuccessUrl("/dashboard");
+			.defaultSuccessUrl("{noop}/dashboard");
 	
 	}
 }
